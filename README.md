@@ -1,7 +1,7 @@
 # T1A3 D&D Character Creator
 
 Design and Developed by Anthony Mann
-https://trello.com/b/tU7B2Cxo/ddcharactercreationapp
+<https://trello.com/b/tU7B2Cxo/ddcharactercreationapp>
 
 ## Software Development Plan
 

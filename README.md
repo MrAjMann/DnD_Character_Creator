@@ -25,6 +25,8 @@ As you start the application you will be greeted with a starting menu. This menu
 ### Features
 
 **API Integration:**
+Access the ["D&D API"](https://www.dnd5eapi.co) to get Multiple streams of information based on where the user is in the character creation process. E.g the first API call is to retrieve a list of **Races**. E.g Druid, Tiefling, Human etc.
+The second API call is for **Classes** E.g Warlock, Sorcerer, barbarian etc. Once the mvp is completed for the App then i want to add further calls to provide more information and allow further expansion of the character class.
 
 **Create A D&D Character:**
 

@@ -1,6 +1,9 @@
 # T1A3 D&D Character Creator
 
 Design and Developed by Anthony Mann
+
+-
+
 <https://trello.com/b/tU7B2Cxo/ddcharactercreationapp>
 
 ## Software Development Plan
@@ -28,3 +31,12 @@ As you start the application you will be greeted with a starting menu. This menu
 **Delete A D&D Character:**
 
 ### Outline
+
+Character Creation Flowchart
+![CharacterCreationFlow](/docs/images/CharacterCreationFlow.png "Character Creation Flow")
+
+**The menu you see when you first start the application**
+![Menu](/docs/images/InitialMenu.png "Initial Menu")
+
+**Character File After Creation visulisation**
+![CharFileIdea](/docs/images/CharacterVisual.png "Character File Visualisation")

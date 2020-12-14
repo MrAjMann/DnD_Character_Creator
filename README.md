@@ -29,8 +29,10 @@ Access the ["D&D API"](https://www.dnd5eapi.co) to get Multiple streams of infor
 The second API call is for **Classes** E.g Warlock, Sorcerer, barbarian etc. Once the mvp is completed for the App then i want to add further calls to provide more information and allow further expansion of the character class.
 
 **Create A D&D Character:**
+The creation of a D&D Character will be the main focus of the who application however it is also a feature in itself. As you go through the application you will be writing to a csv file, retrieving from api's and gaining user input
 
 **Delete A D&D Character:**
+As you can have multiple characters created you can also view all charcters and delete each character individually, or delete all characters together.
 
 ### Outline
 
@@ -42,3 +44,49 @@ Character Creation Flowchart
 
 **Character File After Creation visulisation**
 ![CharFileIdea](/docs/images/CharacterVisual.png "Character File Visualisation")
+
+### Implemetation Plan
+
+**Create Starting Menu**
+-- 1. Import tty-promt Gem
+-- 2. Create a menu using prompt.select
+-- 3. Using symbols "(\*)" create a marker for the player to use as a guide for selecting options.
+
+- Can overwrite symbol using the following code:
+
+  ```Ruby
+      prompt = TTY::Prompt.new(symbols: {marker: ">"})
+  ```
+
+-- 4. Menu will include the following options:
+
+- 1.Create Character
+
+- 2. View Character/s
+
+- 3. Edit Character/s
+
+- 4. Delete Character/s
+
+- 5. Exit
+
+#### **CREATE CHARACTER:**
+
+**Character folder and CSV creation:**
+
+1. Check for an existing Character Folder
+2. If none exists create Folder structure
+
+   - /src/characters
+
+3.elsif we have the folder structure ask for character name?
+
+```Ruby
+    charName = gets.chomp
+```
+
+4.Using the charName create the csv file.
+
+- TheScaleyMagus.CSV
+
+  5.Creation of Folder and is complete we need to now add the character data.

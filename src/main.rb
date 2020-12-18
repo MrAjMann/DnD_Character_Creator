@@ -6,7 +6,6 @@ Built by Anthony Mann 2020
 =end
 require_relative './classes/character'
 require_relative './methods/headers'
-require_relative './methods/menu'
 require_relative './methods/apiCall'
 require 'tty-file'
 require 'tty-prompt'
@@ -21,11 +20,7 @@ def clear
 end
 
 character = Character.new
-character.createFolder
-# font = TTY::Font.new(:standard)
-# pastel = Pastel.new
+character.charCreation
 
-# puts font.write("D&D" + " Character" + " Builder")
-# puts font.write("Character")
-# puts font.write("Builder")
+
 

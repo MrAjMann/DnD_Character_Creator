@@ -11,3 +11,4 @@ gem 'json'
 gem 'csv'
 gem "pastel"
 gem 'tty-font'
+gem 'tts'

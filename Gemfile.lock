@@ -11,6 +11,7 @@ GEM
     pastel (0.8.0)
       tty-color (~> 0.5)
     ruby2_keywords (0.0.2)
+    tts (0.8.2)
     tty-color (0.6.0)
     tty-cursor (0.7.1)
     tty-file (0.10.0)
@@ -36,6 +37,7 @@ DEPENDENCIES
   faraday
   json
   pastel
+  tts
   tty-file
   tty-font
 

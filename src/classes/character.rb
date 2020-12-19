@@ -1,4 +1,5 @@
 require_relative '../methods/apiCall'
+require 'csv'
 
 =begin
 Add a class for Races and Wizards
@@ -38,7 +39,7 @@ def mainMenu
   # puts "Welcome #{File.basename @path, '.csv'} to you Destiny: "
   @menu = [
     { 'Create A Character' => -> do createCharMenu end },
-    { 'View Characters' => -> do showChar end },
+    { 'View Characters' => -> do selectChar end },
     # { 'Edit Characters' => -> do user_medications end },
     { 'Delete Character' => -> do deleteCharacter end },
     { 'Quit' => -> do exitApp end }
@@ -54,15 +55,29 @@ def noCharacter
   $prompt.select('', mainMenu)
 end
 
-   def getFile
-      unless File.exist?("#{@charName}.csv")
-         CSV.open("#{@charName}.csv", 'wb', headers: true,header_converters: :symbol) do |csv|
-        csv << [:Name,:Race,:Class]
-        csv << ["#{@charName}", "#{@charRace}", "#{@charClass}"]
-      end
-     end
-    end
 
+  def getFile
+      unless File.exist?("#{@charName}.csv")
+        data = CSV.parse(<<~ROWS, headers: true)
+        Name,Race,Class
+        #{@charName},#{@charRace},#{@charClass}
+        ROWS
+      CSV.open("#{@charName}.csv", 'wb') do |rows|
+      rows << data
+      puts data
+      end
+    end
+  end
+
+  # def readData
+  #   unless File.exist?("#{@charName}.csv")
+  #     @data = CSV.parse(<<~ROWS, headers: true)
+  #   Name,Race,Class
+  #   #{@charName},#{@charRace},#{@charClass}
+  #   ROWS
+  #   puts @data.first
+  #   end
+  # end
     def createCharMenu
       appWelcome
       getCharInformation
@@ -76,9 +91,11 @@ end
 
    selectRace
    selectClass
-  #  sleep 1
    getFile
-      # showChar
+  #  sleep 1
+  #  selectChar
+   sleep 1
+   mainMenu
    end
 
 
@@ -132,13 +149,13 @@ end
         puts "You have selected the barbarian"
          getCharClassStats
         sleep 2
-      when @charClass === "Cleric"
-        puts "You have selected the cleric"
-         getCharClassStats
-        sleep 2
       when @charClass == "Bard"
         puts "You have selected the bard"
             getCharClassStats
+        sleep 2
+      when @charClass === "Cleric"
+        puts "You have selected the cleric"
+         getCharClassStats
         sleep 2
       when @charClass == "Druid"
         puts"You have selected the druid"
@@ -148,38 +165,73 @@ end
         puts "You have selected the fighter"
          getCharClassStats
         sleep 2
+      when @charClass == "Monk"
+        puts "You have selected the monk"
+         getCharClassStats
+        sleep 2
+      when @charClass == "Paladin"
+        puts "You have selected the paladin"
+         getCharClassStats
+        sleep 2
+      when @charClass == "Ranger"
+        puts "You have selected the ranger"
+         getCharClassStats
+        sleep 2
+      when @charClass == "Rogue"
+        puts "You have selected the rogue"
+         getCharClassStats
+        sleep 2
+      when @charClass == "Sorcerer"
+        puts "You have selected the sorcerer"
+         getCharClassStats
+        sleep 2
+      when @charClass == "Warlock"
+        puts "You have selected the warlock"
+         getCharClassStats
+        sleep 2
+      when @charClass == "Wizard"
+        puts "You have selected the wizard"
+         getCharClassStats
+        sleep 2
       else
         puts "This code isn't working"
       end
     end
 
-   def showChar  
-    Dir.foreach('./') do |filename|
-      next if filename == '.' or filename == '..'
-      puts filename.split('.csv')
-      sleep 3
-      mainMenu
+    def selectChar
+      if Dir.empty?("./")
+        puts "no character exist"
+        sleep 2
+        mainMenu
+       else
+       char = $prompt.select("Select a character", charList)
+       array_of_hashmaps = CSV.read("#{char}", headers: true)
+          p array_of_hashmaps# 1
+        
+      #  else
+       end
+      #  end
     end
 
-end
-def charList  
-  Dir.foreach('./') do |filename|
-    next if filename == '.' or filename == '..'
-    puts filename.split('.csv')
-
-  end
-
+def charList 
+  charFiles = Dir.children( './' ) 
+  # puts charFiles
+  charFiles
 end
 
   def deleteCharacter
     clear
     appWelcome
-    @path = ("./characters")
-    charList
-   puts "Enter The Name of the character your wish to delete"
-    delChar = gets.chomp
-      File.delete("#{delChar}.csv")
-      mainMenu
+   if Dir.empty?("./")
+    puts "no character exist"
+    sleep 2
+    mainMenu
+   else
+    puts "Select the character to delete"
+    TTY::File.remove_file "#{selectChar}"
+    clear
+    mainMenu
+  end
   end
 
  def exitApp

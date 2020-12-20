@@ -1,8 +1,8 @@
 # T1A3 D&D Character Creator
 
-Design and Developed by Anthony Mann
+Design and Developed by Anthony Mann.
 
--
+## <!-- This application is in early stages of development and not all features are available. -->
 
 <https://trello.com/b/tU7B2Cxo/ddcharactercreationapp>
 
@@ -25,7 +25,7 @@ As you start the application you will be greeted with a starting menu. This menu
 ### Features
 
 **API Integration:**
-Access the ["D&D API"](https://www.dnd5eapi.co) to get Multiple streams of information based on where the user is in the character creation process. E.g the first API call is to retrieve a list of **Races**. E.g Druid, Tiefling, Human etc.
+Access the ["D&D API"](https://www.dnd5eapi.co/api) to get Multiple streams of information based on where the user is in the character creation process. E.g the first API call is to retrieve a list of **Races**. E.g Druid, Tiefling, Human etc.
 The second API call is for **Classes** E.g Warlock, Sorcerer, barbarian etc. Once the mvp is completed for the App then i want to add further calls to provide more information and allow further expansion of the character class.
 
 **Create A D&D Character:**
@@ -44,6 +44,18 @@ Character Creation Flowchart
 
 **Character File After Creation visulisation**
 ![CharFileIdea](/docs/images/CharacterVisual.png "Character File Visualisation")
+
+**Edit Character Flowchart**
+![Edit Character Flow](/docs/images/Edit_Character_Flow.png "Edit Character Flowchart")
+
+**View Character Flowchart**
+![View Character Flow](/docs/images/View_character_flow.png "View Character Flowchart")
+
+**Delete Character Flowchart**
+![Delete Character Flow](/docs/images/Delete_character_flow.png "View Character Flowchart")
+
+**API Access Flowchart**
+![API Access Flow](/docs/images/API_Access_flow.png "API Access Flowchart")
 
 ### Implemetation Plan
 
@@ -87,6 +99,35 @@ Character Creation Flowchart
 
 4.Using the charName create the csv file.
 
-- TheScaleyMagus.CSV
+e.g TheScaleyMagus.CSV
 
-  5.Creation of Folder and is complete we need to now add the character data.
+5.Creation of Folder and is complete we need to now add the character data.
+
+6.Next we are presented with a list of character Races from the ["D&D API"](https://www.dnd5eapi.co/api/races), once the user has selected a Race from the presented options the user is shown a bit of background information about that race.
+
+<!-- This information will eventually be stored, if time is permitted i will give the user the option to read the information and go back to the Race menu and choose a different Race. -->
+
+<!-- IF YOU ARE SEEING THIS THEN THE ABOVE STATEMENT HAS NOT BEEN ADDED -->
+
+7.Next we are presented with a list of character Classes from the ["D&D API"](https://www.dnd5eapi.co/api/classes), once the user has selected a Race from the presented options the user is given a list of items in which the user will eventually have to select two of.
+
+<!-- This information will eventually be stored, if time is permitted i will give the user the option to read the information and go back to the Class menu and choose a different Class. -->
+
+<!-- IF YOU ARE SEEING THIS THEN THE ABOVE STATEMENT HAS NOT BEEN ADDED -->
+
+8.At this point we have completed the character creation process untill I get the ability score and dice rolling mechanics coded into the application.
+
+### Running the application
+
+1. cd in to ./AnthonyMann_T1A3
+
+2. From this folder you run the following in the terminal window.
+
+```Ruby
+ ./DND_Character_Bulder.sh
+
+# This command will also install all dependencies required to run.
+#For a complete list see below
+```
+
+Thank you for using DND Character Builder

@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 =begin
 
 D&D Character Builder V1.0 

@@ -130,4 +130,38 @@ e.g TheScaleyMagus.CSV
 #For a complete list see below
 ```
 
+The application will guide you through the creation process.
+
+If for some reason the .sh file does not work please follow these instructions
+
+1. From the folder above ./AnthonyMann_T1A3.
+
+2.Enter the following into your terminal
+
+```Ruby
+
+    gem install bundler
+    #  when finished
+    bundle install
+
+```
+
+3.cd into src and run the following in the terminal
+
+```Ruby
+
+    ruby main.rb
+# This will run the application
+```
+
+### Dependencies
+
+csv
+faraday
+json
+pastel
+tts
+tty-file
+tty-font
+
 Thank you for using DND Character Builder
